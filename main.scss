@@ -1,0 +1,29 @@
+@mixin rings ($width, $height, $bordercolor, $color) {
+    width : $width ;
+    height : $height ;
+    border-radius: 200% ;
+    border : 2px solid $bordercolor ;
+    box-shadow : 3px 3px 0 $color;
+  
+  }
+  
+  .anneau {
+    @include rings (50px, 50px, orange, orange);
+  }
+  
+  .grosanneau {
+    @include rings(100px, 100px, yellow, yellow);
+  }
+  
+
+  
+  @for $i from 1 through 6 {
+    .rings-#{$i} {
+    width : 30px * $i ;
+    height : 30px * $i ;
+    border-radius: 200% ;
+    border : 2px solid black ;
+    box-shadow : 3px 3px 0 black;
+    margin : -0.5em;
+    }
+  }
